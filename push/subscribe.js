@@ -23,14 +23,15 @@ const subscribe = (sw, pubkey) => {
       applicationServerKey: urlBase64ToUint8Array(`${pubkey}`),
       userVisibleOnly: true,
     };
-    // alert("option: " + JSON.stringify(option));
+    alert("option: " + JSON.stringify(option));
     sw.pushManager
       .subscribe(option)
       .then((subscription) => {
-        // alert(JSON.stringify(subscription));
+        alert('sub',JSON.stringify(subscription));
         resolve(subscription);
       })
       .catch((e) => {
+      alert('sub e', e)
         reject(e);
       });
   });
@@ -39,6 +40,7 @@ const subscribe = (sw, pubkey) => {
 export const askSubscribe = (sw, pubkey) => {
   return async () => {
     try {
+    alert('ask')
       await ask();
     } catch {
       alert(
@@ -46,6 +48,7 @@ export const askSubscribe = (sw, pubkey) => {
       );
       return;
     }
+    alert('subscribe')
     return await subscribe(sw, pubkey);
   };
 };
