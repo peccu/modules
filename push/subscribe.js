@@ -38,7 +38,7 @@ const subscribe = (sw, pubkey) => {
 };
 
 export const askSubscribe = (sw, pubkey) => {
-  return async () => {
+  return new Promise(async (resolve, reject) => {
     try {
     alert('ask')
       await ask();
@@ -46,9 +46,15 @@ export const askSubscribe = (sw, pubkey) => {
       alert(
         "Push Notification is not allowed in current setting. Please review it in Settings and allow it."
       );
-      return;
+      reject("Push Notification is not allowed in current setting. Please review it in Settings and allow it.");
     }
+    try {
     alert('subscribe')
-    return await subscribe(sw, pubkey);
+    const subscription = await subscribe(sw, pubkey);
+    resolve(subscription)
+    }catch (e){
+    reject(e)
+    }
+    
   };
 };
