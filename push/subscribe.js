@@ -1,5 +1,5 @@
-// import { urlBase64ToUint8Array } from "https://cdn.jsdelivr.net/gh/peccu/modules@main/push/urlBase64ToUint8Array.js";
-import { urlBase64ToUint8Array } from "./urlBase64ToUint8Array.js";
+import { urlBase64ToUint8Array } from "https://cdn.jsdelivr.net/gh/peccu/modules@main/push/urlBase64ToUint8Array.js";
+// import { urlBase64ToUint8Array } from "./urlBase64ToUint8Array.js";
 
 const ask = () => {
   return new Promise((resolve, reject) => {
