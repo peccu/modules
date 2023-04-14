@@ -1,5 +1,5 @@
-import { urlBase64ToUint8Array } from "https://cdn.jsdelivr.net/gh/peccu/modules@main/push/urlBase64ToUint8Array.js";
-// import { urlBase64ToUint8Array } from "./urlBase64ToUint8Array.js";
+// import { urlBase64ToUint8Array } from "https://cdn.jsdelivr.net/gh/peccu/modules@main/push/urlBase64ToUint8Array.js";
+import { urlBase64ToUint8Array } from "./urlBase64ToUint8Array.js";
 
 const ask = () => {
   return new Promise((resolve, reject) => {
@@ -37,15 +37,16 @@ const subscribe = (sw, pubkey) => {
   });
 };
 
-export const askSubscribe = (sw, pubkey) => {
+export const askSubscribef = (sw, pubkey) => {
   return async () => {
     try {
       await ask();
     } catch {
-        alert(
-          "Push Notification is not allowed in current setting. Please review it in Settings and allow it."
-        );
-        return;
+      alert(
+        "Push Notification is not allowed in current setting. Please review it in Settings and allow it."
+      );
+      return;
     }
-  return await subscribe(sw, pubkey);
-}
+    return await subscribe(sw, pubkey);
+  };
+};
