@@ -1,3 +1,3 @@
 # modules
 
-https://cdn.jsdelivr.net/gh/peccu/modules@version/file
+https://cdn.jsdelivr.net/gh/peccu/modules/
