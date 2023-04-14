@@ -1,4 +1,3 @@
-// import { urlBase64ToUint8Array } from "https://cdn.jsdelivr.net/gh/peccu/modules@main/push/urlBase64ToUint8Array.js";
 import { urlBase64ToUint8Array } from "./urlBase64ToUint8Array.js";
 
 const ask = () => {
@@ -37,7 +36,7 @@ const subscribe = (sw, pubkey) => {
   });
 };
 
-export const askSubscribef = (sw, pubkey) => {
+export const askSubscribe = (sw, pubkey) => {
   return async () => {
     try {
       await ask();
