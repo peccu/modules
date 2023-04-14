@@ -1,4 +1,4 @@
-export default function(base64String) {
+export default (base64String) => {
   const padding = "=".repeat((4 - (base64String.length % 4)) % 4);
   const base64 = (base64String + padding)
     .replace(/\-/g, "+")
